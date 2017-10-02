@@ -1,5 +1,12 @@
 @highlight: #ec1c24;
 
+a {
+  color: @highlight;
+  &:hover {
+    color: darken(@highlight,10%);
+  }
+}
+
 .intro {
   max-width: 700px;
   margin: auto;
@@ -9,7 +16,8 @@
 .credit-container {
   padding: 100px 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
+  font-family: @block-graphics;
   a {
     color: @highlight;
     &:hover {
@@ -49,8 +57,8 @@
     }
     .timestamp {
       color: @highlight;
-      font-family: @bold-graphics;
-      font-size: 20px;
+      // font-family: @bold-graphics;
+      font-size: 16px;
     }
     .timestamp-circle {
       position: absolute;

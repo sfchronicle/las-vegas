@@ -17,7 +17,6 @@
   <%= !json.project.embedded ? "<body>" : "<body is='responsive-body'>" %>
 
     <div class="title-container">
-      <div class="title"><%= json.las_vegas_timeline.Title %></div>
       <div class="author"><%= json.las_vegas_timeline.Author %></div>
       <div class="date">Last updated: <%= json.las_vegas_timeline.Updated %></div>
     </div>
@@ -37,10 +36,9 @@
           <div class="timestamp"><%= d.Time %></div>
           <div class="description"><%= d.Description %></div>
           <% if (d.Photo) { %>
-            <% console.log(d.Photo) %>
             <div class="timeline-img">
               <img src="<%=d.Photo%>"></img>
-              <div class="caption"><%=d.Caption%></div>
+              <div class="caption"><%=d.Credit%></div>
             </div>
           <% } %>
         </div>
@@ -54,6 +52,7 @@
           <% if (d.Photo) { %>
             <div class="timeline-img">
               <img src="<%=d.Photo%>"></img>
+              <div class="caption"><%=d.Credit%></div>
             </div>
           <% } %>
         </div>
