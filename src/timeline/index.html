@@ -18,8 +18,8 @@
 
     <div class="title-container">
       <div class="title"><%= json.las_vegas_timeline.Title %></div>
-      <div class="date"><%= json.las_vegas_timeline.Date %></div>
       <div class="author"><%= json.las_vegas_timeline.Author %></div>
+      <div class="date">Last updated: <%= json.las_vegas_timeline.Updated %></div>
     </div>
 
     <div class="intro"><%= json.las_vegas_timeline.Intro %></div>
@@ -47,6 +47,10 @@
       <% } %>
 
     <% }) %>
+  </div>
+
+  <div class="credit-container">
+    <div>Development by <a href="mailto:eoneill@sfchronicle.com">Emma O'Neill</a> and <a href="mailto:lvilla@sfchronicle.com">Lucio Villa</a></div>
   </div>
 
     <script src="../timeline_app.js" async></script>
