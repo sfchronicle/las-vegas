@@ -25,6 +25,7 @@
     <div class="intro"><%= json.las_vegas_timeline.Intro %></div>
     <div class="inline-img">
       <img src="<%= json.las_vegas_timeline.Map %>"></img>
+      <div class="caption"><%=json.las_vegas_timeline.Map_caption%></div>
     </div>
 
     <div class="timeline-container">
@@ -35,6 +36,13 @@
           <div class="timestamp-circle right"></div>
           <div class="timestamp"><%= d.Time %></div>
           <div class="description"><%= d.Description %></div>
+          <% if (d.Photo) { %>
+            <% console.log(d.Photo) %>
+            <div class="timeline-img">
+              <img src="<%=d.Photo%>"></img>
+              <div class="caption"><%=d.Caption%></div>
+            </div>
+          <% } %>
         </div>
         <div class="event"></div>
       <% } else { %>
@@ -43,6 +51,11 @@
           <div class="timestamp-circle left"></div>
           <div class="timestamp"><%= d.Time %></div>
           <div class="description"><%= d.Description %></div>
+          <% if (d.Photo) { %>
+            <div class="timeline-img">
+              <img src="<%=d.Photo%>"></img>
+            </div>
+          <% } %>
         </div>
       <% } %>
 
