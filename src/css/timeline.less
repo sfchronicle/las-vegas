@@ -1,3 +1,10 @@
+@highlight: #ec1c24;
+
+.intro {
+  max-width: 700px;
+  margin: auto;
+  // font-family: @med-graphics;
+}
 
 .timeline-container {
   .display-flex;
@@ -10,6 +17,8 @@
     .flex(0 0 50%);
     padding-bottom: 50px;
     position: relative;
+    padding: 10px;
+    padding-top: 0;
     &.left {
       padding-right: 20px;
       border-right: 2px solid #ccc;
@@ -20,7 +29,7 @@
       margin-left: -2px;
     }
     .timestamp {
-      color: red;
+      color: @highlight;
       font-family: @bold-graphics;
       font-size: 16px;
     }

@@ -16,6 +16,17 @@
 
   <%= !json.project.embedded ? "<body>" : "<body is='responsive-body'>" %>
 
+    <div class="title-container">
+      <div class="title"><%= json.las_vegas_timeline.Title %></div>
+      <div class="date"><%= json.las_vegas_timeline.Date %></div>
+      <div class="author"><%= json.las_vegas_timeline.Author %></div>
+    </div>
+
+    <div class="intro"><%= json.las_vegas_timeline.Intro %></div>
+    <div class="inline-img">
+      <img src="<%= json.las_vegas_timeline.Map %>"></img>
+    </div>
+
     <div class="timeline-container">
     <% json.las_vegas_timeline.timeline.forEach(function(d,didx){ %>
 
