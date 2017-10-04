@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.seo_title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="__sync_contentCategory" content="meterA">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="http://projects.sfchronicle.com/shared/js/jquery.min.js"></script>
+
+
+    <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet-src.js"></script> -->
+    <!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"/> -->
+
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+   crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+   crossorigin=""/>
+
+    <%= !json.project.embedded ? t.include("partials/_paywall.html") : t.include("partials/_embedframe.html") %>
+
+    <%= t.include("partials/_head.html") %>
+
+  </head>
+
+  <%= !json.project.embedded ? "<body>" : "<body is='responsive-body'>" %>
+
+    <%= t.include("partials/_nav.html") %>
+
+    <div class="map-container">
+      <div id="map"></div>
+      <div class="tooltip-map" id="tooltip"></div>
+    </div>
+
+    <div class="top-container">
+
+      <div class="hed-wrapper">
+        <div class="hed"><%=json.map_text.Title%></div>
+        <div class="byline">By <a href="mailto:eoneill@sfchronicle.com">Emma O'Neill</a></div>
+        <div class="chatter"><%=json.map_text.Deck%></div>
+      </div>
+
+      <div class="instructions">Scroll down.
+        <div class="arrow"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+
+      </div>
+
+    </div>
+    <div id="bottom-of-top"></div>
+
+    <div class="category-box">
+    <% json.map_text.slides.forEach(function(d,dIDX){ %>
+      <div class="event" id="mapevent<%=dIDX%>">
+        <div class="shooting-category"><%=d.Hed%></div>
+      </div>
+    <% }); %>
+    </div>
+
+    <div id="top-of-bottom"></div>
+
+    <div class="bottom-of-page">
+      <div class="disclaimer">
+        <div class="disclaimer-sentence">Data is recorded by <a href="http://www.gunviolencearchive.org/" target="_blank">Gun Violence Archive</a>.</div>
+        <div class="disclaimer-sentence"><%=json.map_text.Explanation%></div>
+        <div class="disclaimer-sentence"><%=json.map_text.Explanation2%></div>
+        <div class="disclaimer-sentence"><%=json.map_text.Explanation3%></div>
+      </div>
+    </div>
+
+
+    <%= t.include("partials/_footer.html") %>
+
+    </div>
+
+    <script>
+      var shootingsData = <%= JSON.stringify(json.UpdatedShootings1001) %>
+      var categoryData = <%= JSON.stringify(json.map_text.slides) %>
+    </script>
+
+    <script src="../map_app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>
