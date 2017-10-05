@@ -177,12 +177,13 @@ circle {
   color: white;
   // padding: 30px;
   padding-bottom: 100px;
-  margin-top: 200px;
+  margin-top: 400px;
   padding-left: 50px;
   max-width: 600px;
   margin-right: 60%;
   margin-left: auto;
   @media @laptop {
+    margin-top: 200px;
     // padding-top: 80px;
     width: 40%;
   }
@@ -190,7 +191,8 @@ circle {
     width: 50%;
   }
   @media @tablet {
-    width: 60%;
+    width: 70%;
+    padding-top: 250px;
     padding-bottom: 120px;
   }
   @media @mobile {
@@ -293,7 +295,7 @@ circle {
   font-family: @block-graphics;
   @media @mobile {
     // color: black;
-    padding: 0 15px;
+    padding: 0;
     font-size: 16px;
     font-family: @block-graphics;
   }
@@ -317,7 +319,7 @@ circle {
     // background: rgba(255,255,255,0.9);
   }
   .hed {
-    font-family: @bold-graphics;
+    font-family: @med-graphics;
     font-size: 30px;
     max-width: 450px;
     margin: auto;
@@ -328,18 +330,26 @@ circle {
     @media @mobile {
       font-size: 25px;
     }
+    .title-date {
+      font-family: @bold-graphics;
+      color: @highlight;
+      font-size: 38px;
+      @media @mobile {
+        font-size: 30px;
+      }
+    }
   }
 }
 
 
 body {
-  @media @mobile {
+  // @media @mobile {
     // z-index: -100;
-    pointer-events: none;
+    // pointer-events: none;
     a {
       pointer-events: all !important;
     }
-  }
+  // }
 }
 
 svg {
