@@ -42,7 +42,7 @@ main {
 
 a {
   // color: @gray-blue;
-  text-decoration: none;
+  text-decoration: underline;
   outline: 0 !important;
   // &:hover {
   //   color: darken(@gray-blue,10%);
@@ -249,20 +249,10 @@ text {
   right: 0;
 }
 
-.specialhead-top {
-  color: @gray-blue;
-  font-family: @banner;
-  font-size: 18px;
-  text-transform: uppercase;
-  @media @mobile {
-    font-size: 13px;
-    vertical-align: text-top;
-  }
-}
 
 .specialhead {
   text-align: center;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   color: @head-color;
   font-family: @banner;
   font-size: 15px;
@@ -297,7 +287,7 @@ text {
 
   &.special {
     a {
-      color: @gray-blue;
+      color: @highlight;
     }
   }
   &.social {
@@ -305,7 +295,7 @@ text {
     margin: 0 6px;
     padding: 4px 2px;
     a {
-      color: @gray-blue;
+      color: @highlight;
     }
   }
   &.email {
@@ -390,7 +380,7 @@ header {
     margin-bottom: 2.5em;
   }
 }
-// 
+//
 // .byline {
 //   color: @rename-color;
 //   font-style: italic;

@@ -1,7 +1,8 @@
 @red: #E32B2B;//#3C87CF;
 @dark-red: #c11a1a;
 @gray-blue: #899D9E;
-@dark-gray-blue: #0A1E1F;//#233738;//#3D5152;
+@dark-gray-blue: #00021B;//#233738;//#3D5152;
+
 
 body {
   font-family: @block-graphics;
@@ -11,17 +12,33 @@ iframe {
   border: 0 !important;
 }
 
+.specialhead-top {
+  color: @highlight;
+  font-family: @banner;
+  font-size: 18px;
+  padding-top: 0;
+  vertical-align: baseline;
+  // text-transform: uppercase;
+  @media @mobile {
+    font-size: 13px;
+    vertical-align: text-top;
+  }
+}
+
 .disclaimer {
   padding: 50px 0 70px 0;
   font-size: 16px;
-  color: black;
+  color: white;
   // font-family: @med-graphics;
   text-align: center;
-  @media @tablet {
-    padding: 20px;
-    padding-top: 50px;
-    padding-bottom: 0px;
+  @media @mobile {
+    padding: 30px 15px 50px 15px;
   }
+  // @media @tablet {
+  //   padding: 20px;
+  //   padding-top: 50px;
+  //   padding-bottom: 0px;
+  // }
   .disclaimer-sentence {
     max-width: 600px;
     margin: auto;
@@ -73,12 +90,12 @@ iframe {
     &:hover {
       color: white;
     }
-    @media @tablet {
-      color: @dark-gray;
-      &.hover {
-        color: @light-gray;
-      }
-    }
+    // @media @tablet {
+    //   color: @dark-gray;
+    //   &.hover {
+    //     color: @light-gray;
+    //   }
+    // }
     text-decoration: underline;
   }
 }
@@ -140,11 +157,16 @@ circle {
   z-index: 100;
   color: white;
   // margin: 200px 0;
-  background: #00021B;
+  background: @dark-gray-blue;
   padding: 20px;
 }
 .event {
-  padding: 300px 0;
+  padding: 500px 0;
+  // pointer-events: none;
+  @media @mobile {
+    padding: 0;
+    margin: 600px 0;
+  }
 }
 
 .top-container {
@@ -152,14 +174,16 @@ circle {
   top: 0;
   z-index: 80;
   text-align: left;
-  width: 50%;
   color: white;
-  padding: 30px;
-  padding-bottom: 140px;
-  padding-top: 200px;
+  // padding: 30px;
+  padding-bottom: 100px;
+  margin-top: 200px;
   padding-left: 50px;
+  max-width: 600px;
+  margin-right: 60%;
+  margin-left: auto;
   @media @laptop {
-    padding-top: 80px;
+    // padding-top: 80px;
     width: 40%;
   }
   @media @tablet-horiz {
@@ -171,7 +195,7 @@ circle {
   }
   @media @mobile {
     width: 100%;
-    top: 300px;
+    top: 100px;
     padding: 0;
   }
 }
@@ -179,13 +203,17 @@ circle {
 .tooltip-map {
   width: 200px;
   position: absolute;
+  z-index:40;
+  @media @mobile {
+    // position: fixed;
+    z-index: 500;
+  }
   font-family: @block-graphics;
   font-size: 14px;
   background: white;
   padding: 5px 10px;
   border: @light-gray 1px solid;
   visibility: hidden;
-  z-index:40;
   .bold {
     font-family: @med-graphics;
   }
@@ -207,13 +235,30 @@ circle {
   z-index:-100;
 }
 
+&.desktop {
+  display: block;
+  @media @mobile {
+    display: none;
+  }
+}
+&.mobile {
+  display: none;
+  @media @mobile {
+    display: block;
+  }
+}
+
 .category-box {
   position: relative;
   width: 35%;
   margin-left: 100px;
   padding-top: 300px;
   padding-bottom: 200px;
-  font-size: 22px;
+  font-size: 24px;
+  max-width: 600px;
+  margin-right: 60%;
+  margin-left: auto;
+  // pointer-events: none;
   @media @tablet {
     margin-left: 180px;
     width: 45%;
@@ -221,15 +266,19 @@ circle {
   @media @mobile {
     width:90%;
     margin: auto;
-    padding-top: 700px;
+    padding-top: 0;
     color: black;
+    font-size: 20px;
+  }
+  @media @mini-mobile {
+    font-size: 18px;
   }
   text-align: left;
 }
 
 .bold-class {
   font-family: @bold-graphics;
-  font-size: 35px;
+  font-size: 26px;
   color: @highlight;
 }
 
@@ -243,7 +292,7 @@ circle {
   max-width: 900px;
   font-family: @block-graphics;
   @media @mobile {
-    color: black;
+    // color: black;
     padding: 0 15px;
     font-size: 16px;
     font-family: @block-graphics;
@@ -255,15 +304,17 @@ circle {
 }
 
 .hed-wrapper {
-  margin-top: 50px;
+  // margin-top: 90px;
+  padding: 10px;
   color: white;
   background: #00021B;
   @media @mobile {
     margin-top: 0;
     padding-top: 30px;
     padding-bottom: 15px;
-    color: darken(@gray-blue,25%);
-    background: rgba(255,255,255,0.9);
+    background: rgba(0, 2, 27, 0.8);
+    // color: darken(@gray-blue,25%);
+    // background: rgba(255,255,255,0.9);
   }
   .hed {
     font-family: @bold-graphics;
@@ -282,7 +333,13 @@ circle {
 
 
 body {
-  pointer-events: all;
+  @media @mobile {
+    // z-index: -100;
+    pointer-events: none;
+    a {
+      pointer-events: all !important;
+    }
+  }
 }
 
 svg {
@@ -296,6 +353,7 @@ circle {
 #map {
   pointer-events: all;
   position: fixed;
+  top: 0;
   height: 100%;
   width: 100%;
   margin: auto;
@@ -318,15 +376,20 @@ circle {
 
 .instructions {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
   font-size: 16px;
   color: white;
   font-family: @bold-graphics;
-  .fa {
+  .fa-hand-o-right {
+    padding-right: 5px;
+  }
+  .fa-angle-double-down {
     font-size: 30px;
   }
+  background: @dark-gray-blue;
   @media @mobile {
-    background: rgba(255,255,255,0.9);
+    background: rgba(0, 2, 27, 0.8);
+    // background: rgba(255,255,255,0.9);
     padding-top: 10px;
     padding-bottom: 20px;
   }
@@ -443,7 +506,8 @@ circle {
 .bottom-of-page {
   position: relative;
   width: 100%;
-  background: rgba(255,255,255,0.8);
+  background: rgba(0, 2, 27, 0.8);
+  color: white;
 }
 
 // credits ---------------------------------------------------------------------

@@ -1,18 +1,18 @@
 {
   "year":"2017",
-  "title": "",
-  "description": "",
-  "seo_title": "",
-  "author":"",
-  "hearst_category":"",
-  "date":"2017-04-02",
+  "title": "Interactive: One Day of Gun Violence in America",
+  "description": "On Oct. 1 in Las Vegas, 59 people were killed in the deadliest mass shooting in modern U.S. history. There were also dozens more gun-related deaths that same day that we didn’t talk about.",
+  "seo_title": "One Day of Gun Violence in America",
+  "author":"Emma O'Neill",
+  "hearst_category":"Interactive",
+  "date":"2017-04-04",
   "url": "http://projects.sfchronicle.com/2017/",
-  "slug": "SLUG-HERE-WITH-TRAILING-SLASH/",
-  "twitter_text":"",
+  "slug": "gun-violence-in-america-on-oct-1/",
+  "twitter_text":"One day of gun violence in America, from Las Vegas to New York.",
   "hashtag":"",
-  "image": "assets/social.jpg",
+  "image": "assets/social_v3.jpg",
   "sheets": ["1GHxN7K9ACbZSs2priOv3EsLcxv92-e2JlE6COe_LRyY"],
   "docsID":["1KLOFHD1uyyMgd6P4cxJ55n0UbNAmc8wnLjGbanEUA7k","1YsVdjDBRkm0ZiSjLoA8w6UcjCIajPXgeqhzqSVasVE0", "1-g3wYbqnXspmeaw-Qx_3zMpsA4-j2ZIN8rgGUYw04mk"],
   "production": false,
-  "embedded": true
+  "embedded": false
 }

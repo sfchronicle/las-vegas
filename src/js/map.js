@@ -3,21 +3,23 @@ var d3 = require('d3');
 
 // setting parameters for the center of the map and initial zoom level
 if (screen.width <= 480) {
-  var sf_lat = 37.5;
-  var sf_long = -122.23;
-  var zoom_deg = 9;
+  var sf_lat = 15;
+  var sf_long = -100;
+  var zoom_deg = 2.5;
 
-  var offset_top = 900;
-  var bottomOffset = 100;
+  var offset_top = $(window).height();
+  var bottomOffset = 200;
 
 } else {
-  var sf_lat = 37.6;
-  var sf_long = -116.5;
-  var zoom_deg = 0;
+  var sf_lat = 43;
+  var sf_long = -118.5;
+  var zoom_deg = 4;
 
-  var offset_top = 200;
+  var offset_top = $(window).height()/4;
   var bottomOffset = 200;
 }
+
+console.log(offset_top);
 
 var timeTimeout = 10;
 
@@ -40,7 +42,7 @@ function update() {
 
 // initialize map with center position and zoom levels
 var map = L.map("map", {
-  minZoom: 4,
+  // minZoom: 4,
   maxZoom: 16,
   zoomControl: false,
 }).setView([sf_lat,sf_long], zoom_deg);;
@@ -123,12 +125,13 @@ g = svg.append("g");
       if (d.Killed == 0 && d.Injured == 0){
         return 7;
       } else if (d.Injured > 0){
-        return (d.Killed + d.Injured)/20+10;
+        return (d.Killed + d.Injured)/15+10;
       } else {
         return 0;
       }
     })
     .on('mouseover', function(d) {
+      console.log("mouseover");
       var html_str = tooltip_function(d);
       tooltip.html(html_str);
       tooltip.style("visibility", "visible");
@@ -136,8 +139,8 @@ g = svg.append("g");
     .on("mousemove", function() {
       if (screen.width <= 480) {
         return tooltip
-          .style("top",70+"px")
-          .style("left",40+"px");
+          .style("top",(d3.event.pageY+20)+"px")
+          .style("left",(d3.event.pageX/4+20)+"px");
           // .style("top",(d3.event.pageY+40)+"px")//(d3.event.pageY+40)+"px")
           // .style("left",10+"px");
       } else if (screen.width <= 1024) {
@@ -176,7 +179,7 @@ g = svg.append("g");
     .style("stroke","#696969")
     .attr("r", function(d) {
       if (d.Killed > 0){
-        return (d.Killed)/10+7;
+        return (d.Killed)/5+7;
       } else {
         return 0;
       }
@@ -190,8 +193,8 @@ g = svg.append("g");
     .on("mousemove", function() {
       if (screen.width <= 480) {
         return tooltip
-          .style("top",70+"px")
-          .style("left",40+"px");
+          .style("top",(d3.event.pageY+20)+"px")
+          .style("left",(d3.event.pageX/4+20)+"px");
           // .style("top",(d3.event.pageY+40)+"px")//(d3.event.pageY+40)+"px")
           // .style("left",10+"px");
       } else if (screen.width <= 1024) {
