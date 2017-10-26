@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title><%= json.project.seo_title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="__sync_contentCategory" content="meterA">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <%= t.include("partials/_embedframe.html") %>
+
+    <%= t.include("partials/_head.html") %>
+
+  </head>
+
+  <body is='responsive-body'>
+
+    <div class="laws-interactive">
+
+    <div class="title-container laws">
+      <div class="laws-title"><%= json.california_vs_nevada_gun_laws.Title %></div>
+      <div class="laws-deck"><%= json.california_vs_nevada_gun_laws.Deck %></div>
+    </div>
+
+    <div class="law-container">
+    <% json.california_vs_nevada_gun_laws.chart.forEach(function(d,didx){ %>
+
+      <div class="topic"><%=d.Topic%></div>
+
+      <div class="law-event">
+        <div class="timestamp">California</div>
+        <div class="description"><%= d.CA %></div>
+      </div>
+      <div class="law-event">
+        <div class="timestamp">Nevada</div>
+        <div class="description"><%= d.NEV %></div>
+      </div>
+
+    <% }) %>
+    </div>
+
+    <div class="credit laws">
+      <div class="entry">Reporter: Kevin Fagan  &bull; <a href="mailto:kfagan@sfchronicle.com">kfagan@sfchronicle.com</a></div>
+      <div class="entry">Developer: Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a></div>
+    </div>
+    <div class="source laws">Source: <%= json.california_vs_nevada_gun_laws.Source %></div>
+
+  </div>
+
+    <script src="../chart_app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>

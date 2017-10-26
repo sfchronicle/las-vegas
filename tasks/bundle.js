@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     var seeds = {
       "./src/js/main.js": "build/app.js",
       "./src/js/map.js": "build/map_app.js",
-      "./src/js/victims.js": "build/victims_app.js",
+      "./src/js/chart.js": "build/chart_app.js",
       "./src/js/timeline.js": "build/timeline_app.js"
     };
 
